@@ -35,7 +35,7 @@ public class Process{
     }
 
     public int getPriority(){
-        return this.priority();
+        return this.priority;
     }
 
     public int getStartTime(){
@@ -51,11 +51,50 @@ public class Process{
     }
 
     public int getTurnaround(){
-        return this.turnaround
+        return this.turnaround;
     }
 
     public int getResponseTime(){
         return this.response_time;
     }
+
+
+    public void setID(int id){
+        this.id = id;
+    }
+
+    public void setArrial(int arrival){
+        this.arrival = arrival;
+    }
+
+    public void setBurst(int burst){
+        this.burst = burst;
+    }
+
+    public void setPriority(int priority){
+        this.priority = priority;
+    }
+
+    public void setStarTime(int start_time){
+        this.start_time = start_time;
+    }
+
+    public void setFinishTime(int finish_time){
+        this.finish_time = finish_time;
+    }
+
+    public void setWaitingTime(int waiting_time){
+        this.waiting_time = waiting_time;
+    }
+
+    public void Turnaround(int turnaround){
+        this.turnaround = turnaround;
+    }
+    
+    public void setResponseTime(int response_time){
+        this.response_time = response_time;
+    }
+
+
 
 }
