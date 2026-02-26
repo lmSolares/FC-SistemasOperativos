@@ -87,10 +87,10 @@ public class Process{
         this.waiting_time = waiting_time;
     }
 
-    public void Turnaround(int turnaround){
+    public void setTurnaround(int turnaround){
         this.turnaround = turnaround;
     }
-    
+
     public void setResponseTime(int response_time){
         this.response_time = response_time;
     }
