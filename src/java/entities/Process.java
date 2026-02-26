@@ -5,9 +5,6 @@ package src.entities;
 */
 public class Process{
 
-    // Constantes
-    privita int MAX_PROCECESSES = 200;
-
     // Atributos de un proceso
     private int id; // id del proceso
     private int arrival; // Tiempo de llegada del proceso
@@ -19,6 +16,46 @@ public class Process{
     private int turnaround; // finish_time - arrival
     private int response_time; // primer instante en que el proceso recibe CPU − arrival
 
+    // Constructor del proceso
+    public Process(){
 
+    }
+
+    // Getters
+    public int getID(){
+        return this.id;
+    }
+
+    public int getArrival(){
+        return this.arrival;
+    }
+
+    public int getBurst(){
+        return this.burst;
+    }
+
+    public int getPriority(){
+        return this.priority();
+    }
+
+    public int getStartTime(){
+        return this.start_time;
+    }
+
+    public int getFinishTime(){
+        return this.finish_time;
+    }
+
+    public int getWaitingTime(){
+        return this.waiting_time;
+    }
+
+    public int getTurnaround(){
+        return this.turnaround
+    }
+
+    public int getResponseTime(){
+        return this.response_time;
+    }
 
 }
