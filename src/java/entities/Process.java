@@ -10,7 +10,7 @@ public class Process{
     private int arrival; // Tiempo de llegada del proceso
     private int burst; // Ráfaga de CPU original (tiempo cpu)
     private int priority; // Para algoritmo con prioridades
-    private int remaining;
+    private int remaining; // Tiempo que falta de ejecución
     private int start_time; // Primer instante que se ejecuta
     private int finish_time; // Momento en que termina
     private int waiting_time; // Tiempo total de espera
@@ -29,6 +29,13 @@ public class Process{
         this.waiting_time = 0;
         this.turnaround = 0;
         this.response_time = -1;
+    }
+
+    /**
+    *   Método que ejecuta el proceso (decrementa el tiempo que falta de ejecución)
+    */
+    public void executeProcess(){
+        this.remaining--;
     }
 
     // Getters
@@ -73,23 +80,7 @@ public class Process{
     }
 
     // Setters
-    public void setID(int id){
-        this.id = id;
-    }
-
-    public void setArrial(int arrival){
-        this.arrival = arrival;
-    }
-
-    public void setBurst(int burst){
-        this.burst = burst;
-    }
-
-    public void setPriority(int priority){
-        this.priority = priority;
-    }
-
-    public void setStarTime(int start_time){
+    public void setStartTime(int start_time){
         this.start_time = start_time;
     }
 
@@ -112,7 +103,7 @@ public class Process{
     // Utilities
     @Override
     public String toString(){
-        return "P" + this.id + ": arrival=" + this.arrival + " burst=" + this.burst + " priority=" + this.priority;
+        return "P" + this.id + ": arrival=" + this.arrival + " burst=" + this.burst + " priority=" + this.priority + " remaining=" + this.remaining + " start_time=" + this.start_time + " finish_time=" + this.finish_time + " waiting_time=" + this.waiting_time + " turnaround=" + this.turnaround + " response_time=" + this.response_time + "\n";
     }
 
 }
