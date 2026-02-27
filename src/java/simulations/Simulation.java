@@ -29,23 +29,25 @@ public class Simulation{
     public static void simulateFCFS(List<Process> processes){
         int NEXT_PROCESS_THAT_ARRIVES = 0;
         int cpu_timer = 0;
-        Queue<Process> readyprocessQueue = new LinkedList<>();
+        Queue<Process> readyProcessQueue = new LinkedList<>();
         List<Process> processesExecuted = new ArrayList<>();
         Process processInProgress = null;
 
         while(true){
 
-            if(processes.isEmpty()){
+            if(processes.isEmpty() && readyProcessQueue.isEmpty() && processInProgress == null){
                 System.out.println("Tiempo de ejecución: " + cpu_timer);
                 System.out.println(processesExecuted.toString());
                 return;
             }
 
-            // Se verifica la llegada del siguiente proceso
-            Process nextProcess = processes.get(NEXT_PROCESS_THAT_ARRIVES);
-            if(nextProcess.getArrival() == cpu_timer){
-                readyProcessQueue.add(nextProcess);
-                processes.remove(0);
+            if(!processes.isEmpty()){ // Se verifica que sigan llegando procesos
+                // Se verifica la llegada del siguiente proceso
+                Process nextProcess = processes.get(NEXT_PROCESS_THAT_ARRIVES);
+                if(nextProcess.getArrival() == cpu_timer){
+                    readyProcessQueue.add(nextProcess);
+                    processes.remove(0);
+                }
             }
 
             // En caso que no haya ningun proceso en ejecución, se toma el siguiente en la cola
