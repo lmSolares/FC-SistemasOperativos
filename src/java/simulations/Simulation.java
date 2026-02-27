@@ -7,7 +7,7 @@ import java.util.List;
 /**
 *   Clase con la implementación de una simulación de técnicas de planificación
 *   de procesos (CPU scheduling) basada en el capítulo de Procesos e Hilos
-*   de Modern Operating Systems, 5th Ed (sección 2.5 Scheduling), se
+*   de Modern Operating Systems, 5th Ed (sección 2.4 Scheduling), se
 *   implementan especificamente los algoritmos: First-Come, First-Served (FCFS)
 *   y Multilevel queues (Múltiples colas por prioridad).
 */
@@ -15,6 +15,11 @@ public class Simulation{
 
     // Número máximo de procesos
     private int MAX_PROCESSES = 200;
+
+    public static void simulateFCFS(){
+
+    }
+
 
     // Método main
     public void main(){
