@@ -16,6 +16,7 @@ public class Process{
     private int waiting_time; // Tiempo total de espera
     private int turnaround; // finish_time - arrival
     private int response_time; // primer instante en que el proceso recibe CPU − arrival
+    private int user; // usuario al que pertenece el proceso (utilizaremos a priority tambien como usuario)
 
     // Constructor del proceso
     public Process(int id, int arrival, int burst, int priority){
@@ -29,6 +30,7 @@ public class Process{
         this.waiting_time = 0;
         this.turnaround = 0;
         this.response_time = -1;
+        this.user = priority;
     }
 
     /**
@@ -77,6 +79,10 @@ public class Process{
 
     public int getRemaining(){
         return this.remaining;
+    }
+
+    public int getUser(){
+        return this.user;
     }
 
     // Setters
