@@ -10,6 +10,7 @@ El repositorio está dividido en:
 
 * __src:__ Directorio principal donde se encuentra el código de todas las actividades, este se divide por lenguaje, por ejemplo, en *src/java* está el código en Java de las actividades que se hicieron en ese lenguaje.
 * __files:__  Directorio con archivos necesarios para las actividades (ejem. lista de procesos)
+* __Reportes__ Directorio donde se divide en carpetas donde se importan los reportes.
 
 ## Actividades
 
